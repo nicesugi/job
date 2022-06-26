@@ -1,3 +1,4 @@
+
 from django.db import models
 
 
@@ -22,8 +23,8 @@ class JobType(models.Model):
 
 
 class JobPost(models.Model):
-    job_type = models.ForeignKey(JobType, on_delete=models.SET_NULL, null=True)
-    company_name = models.ForeignKey('Company', on_delete=models.SET_NULL, null=True)
+    job_type = models.ForeignKey('JobType', on_delete=models.SET_NULL, null=True)
+    company = models.ForeignKey('Company', on_delete=models.SET_NULL, null=True)
     job_description = models.TextField()
     salary = models.IntegerField()
 
